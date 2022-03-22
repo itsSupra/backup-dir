@@ -9,3 +9,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0] - 2022-03-22
 ### Added
 - Скрипт бекапит конкретную папку на сервер и создает архив в текущей директории
+- source='/Users/ciberdroon/app_root'
+  destination='/Users/ciberdroon/app14'

@@ -1,11 +1,12 @@
 #!/bin/bash
-echo 'Enter directory for archiving'
-read source
-echo 'Enter the directory to save the archive'
-read destination
-tar -czf name.tar.gz source
-if ! [ -d destination ]; then
+$1
+$2
+name=$(echo $1 | sed 's/\/$//g' | sed -n '/.*\//s///p')
+date=$(date '+%Y-%m-%dT%k:%M:%S%:z')
+filename=$name-$date.tar.gz
+tar -czf $filename $1
+if ! [ -d $2 ]; then
   echo "No directory"
-  mkdir destination
+  mkdir $2
 fi
-mv name.tar.gz destination
+mv $filename $2
